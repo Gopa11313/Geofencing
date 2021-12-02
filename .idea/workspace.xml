@@ -28,13 +28,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="9c51282c-1459-4a6b-8461-5666aefe7ef0" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/runConfigurations.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/runConfigurations.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/debug/res/values/google_maps_api.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/debug/res/values/google_maps_api.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/AndroidManifest.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/classAnalysis.bin" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/classAnalysis.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/5.6.4/javaCompile/javaCompile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/main/java/com/example/geofencing/MapsActivity.java" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/main/java/com/example/geofencing/MapsActivity.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -42,7 +43,7 @@
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[VirtualDevicePath@C:\Users\gopal\.android\avd\Pixel_4_API_30.avd]" />
+  <component name="ExecutionTargetManager" SELECTED_TARGET="device_and_snapshot_combo_box_target[SerialNumber@bed3bc89]" />
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
       <ProjectState />
@@ -171,6 +172,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
     <state x="521" y="210" key="#com.intellij.fileTypes.FileTypeChooser" timestamp="1638283527870">
@@ -181,37 +183,58 @@
       <screen x="0" y="0" width="1536" height="816" />
     </state>
     <state x="559" y="155" key="AndroidProcessChooserDialog/0.0.1536.816@0.0.1536.816" timestamp="1638285859044" />
-    <state width="1493" height="215" key="GridCell.Tab.0.bottom" timestamp="1638285589976">
+    <state width="1493" height="130" key="GridCell.Tab.0.bottom" timestamp="1638458256907">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="215" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1638285589976" />
-    <state width="1493" height="215" key="GridCell.Tab.0.center" timestamp="1638285589976">
+    <state width="1493" height="130" key="GridCell.Tab.0.bottom/0.0.1536.816@0.0.1536.816" timestamp="1638458256907" />
+    <state width="1493" height="130" key="GridCell.Tab.0.center" timestamp="1638458256907">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="215" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1638285589976" />
-    <state width="1493" height="215" key="GridCell.Tab.0.left" timestamp="1638285589976">
+    <state width="1493" height="130" key="GridCell.Tab.0.center/0.0.1536.816@0.0.1536.816" timestamp="1638458256907" />
+    <state width="1493" height="130" key="GridCell.Tab.0.left" timestamp="1638458256907">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="215" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1638285589976" />
-    <state width="1493" height="215" key="GridCell.Tab.0.right" timestamp="1638285589976">
+    <state width="1493" height="130" key="GridCell.Tab.0.left/0.0.1536.816@0.0.1536.816" timestamp="1638458256907" />
+    <state width="1493" height="130" key="GridCell.Tab.0.right" timestamp="1638458256907">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="215" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1638285589976" />
-    <state width="1493" height="215" key="GridCell.Tab.1.bottom" timestamp="1638285589977">
+    <state width="1493" height="130" key="GridCell.Tab.0.right/0.0.1536.816@0.0.1536.816" timestamp="1638458256907" />
+    <state width="1493" height="130" key="GridCell.Tab.1.bottom" timestamp="1638458264571">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="215" key="GridCell.Tab.1.bottom/0.0.1536.816@0.0.1536.816" timestamp="1638285589977" />
-    <state width="1493" height="215" key="GridCell.Tab.1.center" timestamp="1638285589977">
+    <state width="1493" height="130" key="GridCell.Tab.1.bottom/0.0.1536.816@0.0.1536.816" timestamp="1638458264571" />
+    <state width="1493" height="130" key="GridCell.Tab.1.center" timestamp="1638458264571">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="215" key="GridCell.Tab.1.center/0.0.1536.816@0.0.1536.816" timestamp="1638285589977" />
-    <state width="1493" height="215" key="GridCell.Tab.1.left" timestamp="1638285589977">
+    <state width="1493" height="130" key="GridCell.Tab.1.center/0.0.1536.816@0.0.1536.816" timestamp="1638458264571" />
+    <state width="1493" height="130" key="GridCell.Tab.1.left" timestamp="1638458264571">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="215" key="GridCell.Tab.1.left/0.0.1536.816@0.0.1536.816" timestamp="1638285589977" />
-    <state width="1493" height="215" key="GridCell.Tab.1.right" timestamp="1638285589977">
+    <state width="1493" height="130" key="GridCell.Tab.1.left/0.0.1536.816@0.0.1536.816" timestamp="1638458264571" />
+    <state width="1493" height="130" key="GridCell.Tab.1.right" timestamp="1638458264571">
       <screen x="0" y="0" width="1536" height="816" />
     </state>
-    <state width="1493" height="215" key="GridCell.Tab.1.right/0.0.1536.816@0.0.1536.816" timestamp="1638285589977" />
+    <state width="1493" height="130" key="GridCell.Tab.1.right/0.0.1536.816@0.0.1536.816" timestamp="1638458264571" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/geofencing/MapsActivity.java</url>
+          <line>304</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/geofencing/MapsActivity.java</url>
+          <line>74</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="java-line">
+          <url>file://$PROJECT_DIR$/app/src/main/java/com/example/geofencing/MapsActivity.java</url>
+          <line>81</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

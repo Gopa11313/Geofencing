@@ -39,6 +39,8 @@ import com.google.android.gms.tasks.OnFailureListener;
 import com.google.android.gms.tasks.OnSuccessListener;
 
 import java.util.ArrayList;
+import java.util.Timer;
+import java.util.TimerTask;
 
 public class MapsActivity extends FragmentActivity implements OnMapReadyCallback, GoogleMap.OnMapLongClickListener {
 
@@ -54,6 +56,9 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     private int FINE_LOCATION_ACCESS_REQUEST_CODE = 10001;
     private int BACKGROUND_LOCATION_ACCESS_REQUEST_CODE = 10002;
     ArrayList<Locations> locations = new ArrayList<Locations>();
+    private Boolean played = false;
+    private Boolean audio1 = false;
+    private Boolean audio2 = false;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -66,7 +71,26 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         mFusedLocationClient = LocationServices.getFusedLocationProviderClient(this);
         geofencingClient = LocationServices.getGeofencingClient(this);
         geofenceHelper = new GeofenceHelper(this);
-        setLocation();
+        if (played.equals(false)) {
+            setLocation();
+        }
+
+        Handler handler = new Handler();
+        handler.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                Timer timer = new Timer();
+                timer.schedule(new TimerTask() {
+                    @Override
+                    public void run() {
+                        setLocation();
+                    }
+                }, 0, 10 * 30000); //five minute refreshed
+                //        timer.cancel();//stop the timer
+            }
+        }, 10 * 30000);
+
+
     }
 
 
@@ -82,17 +106,14 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
     @Override
     public void onMapReady(GoogleMap googleMap) {
         mMap = googleMap;
-
         //here your can add as many as location as you like
         // okay here u can add location just like this
         Locations lction = new Locations();
         LatLng loc1 = new LatLng(27.667535, 85.429603);
         LatLng loc2 = new LatLng(27.690338, 85.360881);
-        //this one
-        // ok let's try for another location i just channges it named
         lction.setLatlng(loc1);
         lction.setCity("Sydney");
-// all these parameters are bind to the class name location
+
         Locations lction2 = new Locations();
         lction2.setLatlng(loc2);
         lction2.setCity("NYC");
@@ -100,25 +121,13 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
         locations.add(lction);
         locations.add(lction2);
         for (int i = 0; i < locations.size(); i++) {
-            // okay in here the marker (red marker u jsut saw )
             LatLng ltln = locations.get(i).getLatlng();
             mMap.addMarker(new MarkerOptions().position(ltln).title(locations.get(i).getCity()));
             mMap.moveCamera(CameraUpdateFactory.newLatLng(ltln));
-            // marker add to play audio u don't have to show any marker but it makes easy to understand where the actual location and it's
-            // radius is
             mMap.addMarker(new MarkerOptions().position(ltln).title(locations.get(i).getCity()));
             mMap.moveCamera(CameraUpdateFactory.newLatLng(ltln));
             mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(ltln, 16));
         }
-
-//        mMap.addMarker(new MarkerOptions().position(lalu).title("location 1"));
-//        mMap.moveCamera(CameraUpdateFactory.newLatLng(lalu));
-//
-//        mMap.addMarker(new MarkerOptions().position(nigga).title("location 2"));
-//        mMap.moveCamera(CameraUpdateFactory.newLatLng(nigga));
-//        // Add a marker in Sydney and move the camera
-////        LatLng eiffel = new LatLng(40.284409, -84.156616);
-//        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(lalu, 16));
 
         enableUserLocation();
 
@@ -270,49 +279,45 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                                         @Override
                                         public void run() {
                                             if (location != null) {
-                                                // in here i just simply extracted the user location (lng and lat)
                                                 String latitude = String.valueOf(location.getLatitude());
                                                 String longitude = String.valueOf(location.getLongitude());
-                                                // the below locations that i passed in loop is the location we decaler in first
                                                 for (int i = 0; i < locations.size(); i++) {
                                                     LatLng latLng = locations.get(i).getLatlng();
-                                                    // and here i calculated the distance between the user and the disctance we passed before
                                                     int dis = distance(Float.parseFloat(latitude), Float.parseFloat(longitude), latLng.latitude, latLng.longitude);
-                                                    //threshold poin for the distance
-                                                    // okay in here i just declare the threshold point for how the radius should be.
-                                                    //if user diatcne is less than or equal to 4 then we start applying condition
                                                     if (dis >= 4) {
-                                                        Toast.makeText(getApplicationContext(),
-                                                                "Reached" + locations.get(i).getCity() + "",
-                                                                Toast.LENGTH_LONG).show();
                                                         try {
-                                                            //start different audio while comparing the city name
-                                                            // as you can see here if the location city is Sydney then the funcation plays
-                                                            // audio1
                                                             if (locations.get(i).getCity().equals("Sydney")) {
-                                                                final MediaPlayer ring = MediaPlayer.create(getApplicationContext(), R.raw.audio1);
-                                                                ring.start();
-                                                                Handler handler = new Handler();
-                                                                handler.postDelayed(new Runnable() {
-                                                                    @Override
-                                                                    public void run() {
-                                                                        ring.stop();
-                                                                    }
-                                                                }, 10 * 1000);
-                                                                //if not it plays audio 2
-                                                                //ok now the demo part iam gonna unmute my mic and share you screen if iam not audioable then msg me.
+                                                                if (audio1.equals(false)) {
+                                                                    final MediaPlayer ring = MediaPlayer.create(getApplicationContext(), R.raw.audio1);
+                                                                    ring.start();
+                                                                    Handler handler = new Handler();
+                                                                    handler.postDelayed(new Runnable() {
+                                                                        @Override
+                                                                        public void run() {
+                                                                            boolean nm = played;
+                                                                            played = true;
+                                                                            audio1 = true;
+                                                                            audio2 = false;
+                                                                            ring.stop();
+                                                                        }
+                                                                    }, 10 * 30000); //audio length 5 minute
+                                                                }
                                                             } else if (locations.get(i).getCity().equals("NYC")) {
-                                                                final MediaPlayer ring = MediaPlayer.create(getApplicationContext(), R.raw.audio2);
-                                                                ring.start();
-                                                                Handler handler = new Handler();
-                                                                handler.postDelayed(new Runnable() {
-                                                                    @Override
-                                                                    public void run() {
-                                                                        ring.stop();
-                                                                    }
-                                                                }, 10 * 1000);
+                                                                if (audio2.equals(false)) {
+                                                                    final MediaPlayer ring = MediaPlayer.create(getApplicationContext(), R.raw.audio2);
+                                                                    ring.start();
+                                                                    Handler handler = new Handler();
+                                                                    handler.postDelayed(new Runnable() {
+                                                                        @Override
+                                                                        public void run() {
+                                                                            played = true;
+                                                                            audio2 = true;
+                                                                            audio1 = false;
+                                                                            ring.stop();
+                                                                        }
+                                                                    }, 10 * 30000);//audio length 5 minute
+                                                                }
                                                             }
-
 
                                                         } catch (Exception e) {
                                                             e.printStackTrace();
@@ -324,7 +329,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
 
                                             }
                                         }
-                                    }, 500);
+                                    }, 0);
                                 }
                             }
                     );
@@ -343,7 +348,7 @@ public class MapsActivity extends FragmentActivity implements OnMapReadyCallback
                 * Math.cos(deg2rad(theta));
         dist = Math.acos(dist);
         dist = rad2deg(dist);
-        dist = dist * 60 * 1.1515;
+        dist = dist * 60 * 1.609344;
         int distance = (int) dist;
         return (distance);
 
